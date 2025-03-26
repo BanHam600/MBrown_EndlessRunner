@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1567985678645215630}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0.999, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -110,8 +110,8 @@ Transform:
   m_GameObject: {fileID: 1961446890624684122}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5303558, y: -0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.5303558, y: -0.058, z: 0}
+  m_LocalScale: {x: 1, y: 1.6625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8399988673060206820}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 4968328651445014541}
   - component: {fileID: 3030470011920238420}
   m_Layer: 0
-  m_Name: Spikes
+  m_Name: Spikes_Big
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,7 +302,7 @@ Transform:
   m_GameObject: {fileID: 6749405653746897895}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.29, y: -0.25, z: 0}
+  m_LocalPosition: {x: 2.003, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
