@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 8399988673060206820}
   - component: {fileID: 4968328651445014541}
   - component: {fileID: 3030470011920238420}
+  - component: {fileID: 7836859405445625264}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Obstacle
@@ -276,6 +277,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5490704, y: 0.88352865}
   m_EdgeRadius: 0
+--- !u!114 &7836859405445625264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3853368200966557250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a312df78a8c0d694a975a7dc7e24d29d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6749405653746897895
 GameObject:
   m_ObjectHideFlags: 0
