@@ -20,6 +20,11 @@ public class ObjectCollision : MonoBehaviour
     {
         if (collision.CompareTag("Boundary"))
         {
+            if(GameManager.Instance.activeObstacles.Contains(this.gameObject))
+            {
+                GameManager.Instance.activeObstacles.Remove(this.gameObject);
+            }
+
             Destroy(gameObject);
         }
     }

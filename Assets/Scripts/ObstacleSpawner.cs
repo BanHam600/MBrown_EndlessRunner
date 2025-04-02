@@ -16,6 +16,8 @@ public class ObstacleSpawner : MonoBehaviour
     private float timeUntilObstacleSpawn; //number counts up until next spawn
     public float obstacleSpawnTime = 2f; // number dictates length of time before spawn
 
+    
+
 
 
     // Start is called before the first frame update
@@ -32,7 +34,12 @@ public class ObstacleSpawner : MonoBehaviour
             Spawn();
         }
 
-        SpawnLoop();
+        if (GameManager.Instance.canSpawn == true)
+        {
+            SpawnLoop();
+        }
+
+
     }
 
     private void SpawnLoop()
@@ -52,6 +59,10 @@ public class ObstacleSpawner : MonoBehaviour
         GameObject obstacleToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Count)];
         GameObject spawnedObstacle = Instantiate(obstacleToSpawn, transform.position, Quaternion.identity);
         Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
+       
         obstacleRB.velocity = Vector2.left * obstacleSpeed;
+        GameManager.Instance.currentObstacleSpeed = obstacleSpeed;
+       
+        GameManager.Instance.activeObstacles.Add(spawnedObstacle);
     }
 }

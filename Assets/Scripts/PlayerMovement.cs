@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private float jumpTimer;
 
 
+
+
     private void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
@@ -68,6 +70,16 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;  
             jumpTimer = 0;
+        }
+
+        if (Input.GetKeyDown("s"))
+        {
+            GameManager.Instance.PauseObstacles();
+        }
+
+        if (Input.GetKeyDown("g"))
+        {
+            GameManager.Instance.ResumeObstacles();
         }
     }
 }

@@ -9,7 +9,16 @@ public class PlayerCollisions : MonoBehaviour
         if (collision.transform.tag == "Obstacle")
         {
             gameObject.SetActive(false);
+            GameManager.Instance.isPlaying = false;
         }
+
+        if (collision.GetComponent<Collectible>())
+        { 
+            
+        }
+
+        
+
     }
 
 }
