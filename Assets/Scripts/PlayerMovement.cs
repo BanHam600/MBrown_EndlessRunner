@@ -7,9 +7,13 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D playerRB;
     [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private float jumpTime = 0.3f;
+
+    [SerializeField] private Animator animator;
+    
     [SerializeField] private Transform feetPos; //where do we generate a physics detector to find what is below us?
     [SerializeField] private LayerMask groundLayer; // what layer of objects counts as the ground?
-    [SerializeField] private float jumpTime = 0.3f;
+    
 
     private bool onGround;
     private bool isJumping;
@@ -18,11 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    private void Awake()
-    {
-        playerRB = GetComponent<Rigidbody2D>();
-    }
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +33,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        
+
         if (Physics2D.OverlapCircle(feetPos.position, 0.25f, groundLayer) == true) // creates a overlap circle at (variable.position, radius, layer)
         {
             onGround = true;
+            //GameManager.Instance.UpdatePlayerPlatformState(bool, onGround);
         }
 
         else
@@ -49,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
             playerRB.velocity = Vector2.up * jumpForce;
             
             isJumping = true;
+            animator.SetBool("isJumping", true);
         }
 
         if (isJumping == true && Input.GetButton("Jump"))

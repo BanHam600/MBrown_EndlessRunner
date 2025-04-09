@@ -701,6 +701,7 @@ MonoBehaviour:
   activeObstacles: []
   currentObstacleSpeed: 0
   maxObstacleSpeed: 0
+  acceleration: 0.1
   canSpawn: 1
   startingPlatRB: {fileID: 1861873412}
   platformForce: 10
@@ -1051,6 +1052,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174894882}
   m_CullTransparentMesh: 1
+--- !u!1 &1316607388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1316607390}
+  - component: {fileID: 1316607389}
+  m_Layer: 0
+  m_Name: Platform Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1316607389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316607388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bf658a057a055479f1b317f4cc8bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle: {fileID: 3853368200966557250, guid: a28b75f152e691b4d8c89df24ba3fb1c, type: 3}
+  obstacleSpeed: 3
+  obstaclePrefabs:
+  - {fileID: 5700270077356139854, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+  spawnTimeMin: 2
+  spawnTimeMax: 5
+  obstacleSpawnTime: 2
+--- !u!4 &1316607390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316607388}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1416409003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2069401143346459832, guid: d8819b7b8e8095b45a2b97b038886900, type: 3}
@@ -1161,8 +1213,9 @@ MonoBehaviour:
   obstacle: {fileID: 3853368200966557250, guid: a28b75f152e691b4d8c89df24ba3fb1c, type: 3}
   obstacleSpeed: 3
   obstaclePrefabs:
-  - {fileID: 3853368200966557250, guid: a28b75f152e691b4d8c89df24ba3fb1c, type: 3}
-  - {fileID: 3144532926270631917, guid: feb0dc4974a63164081d0842679f0520, type: 3}
+  - {fileID: 715443173918646588, guid: aca0203afb8de9b468a24c72e0cefd1e, type: 3}
+  - {fileID: 6086584222527096091, guid: cc85b53c7430ad7448997c1fbba171b0, type: 3}
+  - {fileID: 3152772292580106398, guid: 7c70da99ce64ca949b2a65c1d25e21a2, type: 3}
   spawnTimeMin: 2
   spawnTimeMax: 5
   obstacleSpawnTime: 2
@@ -1175,7 +1228,7 @@ Transform:
   m_GameObject: {fileID: 1829879737}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.93, y: -12.57, z: -4.9959426}
+  m_LocalPosition: {x: 35.93, y: 1.53, z: -4.9959426}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1409,6 +1462,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1416409009}
   m_SourcePrefab: {fileID: 100100000, guid: d8819b7b8e8095b45a2b97b038886900, type: 3}
+--- !u!1001 &8147085939435714387
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5700270077356139854, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_Name
+      value: AsteroidSet1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025790680225413897, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025790680225413897, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025790680225413897, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025790680225413897, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025790680225413897, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025790680225413897, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025790680225413897, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025790680225413897, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025790680225413897, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025790680225413897, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5474fcfc256153e4285a7887b0cec1e8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1417,9 +1527,11 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 2146031014736792974}
   - {fileID: 1829879739}
+  - {fileID: 1316607390}
   - {fileID: 1670628007}
   - {fileID: 1861873411}
   - {fileID: 735862309}
   - {fileID: 580268730}
   - {fileID: 510486637}
   - {fileID: 463783671}
+  - {fileID: 8147085939435714387}
