@@ -17,7 +17,7 @@ public class StartingPlatform : MonoBehaviour
     {
 
         startingPlatRB = GetComponent<Rigidbody2D>();
-        platformCoroutine = GetComponent<Coroutine>();
+        
         
 
     }

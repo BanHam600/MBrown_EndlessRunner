@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3365818408867509032}
+  - component: {fileID: 7314710049308040323}
   m_Layer: 0
   m_Name: AsteroidSet2
   m_TagString: Untagged
@@ -35,6 +36,33 @@ Transform:
   - {fileID: 6451279974804240011}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &7314710049308040323
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090900398317254735}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &898745942774567915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -235,11 +263,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339076436570624799, guid: deffbcd75750a344a9d17f5f636d862b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.01
+      value: -40.97
       objectReference: {fileID: 0}
     - target: {fileID: 1339076436570624799, guid: deffbcd75750a344a9d17f5f636d862b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.89
+      value: -20.83
       objectReference: {fileID: 0}
     - target: {fileID: 1339076436570624799, guid: deffbcd75750a344a9d17f5f636d862b, type: 3}
       propertyPath: m_LocalPosition.z
