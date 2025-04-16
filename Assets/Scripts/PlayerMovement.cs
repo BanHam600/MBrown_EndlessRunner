@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     private bool onGround;
     private bool isJumping;
     private float jumpTimer;
+    
+    private bool isFalling;
+    private float fallTime;
+    private bool wasGrounded;
+
 
 
 
@@ -85,5 +90,35 @@ public class PlayerMovement : MonoBehaviour
         {
             GameManager.Instance.ResumeObstacles();
         }
+
+        // fell without jumping
+        if(wasGrounded && !onGround &&  !isJumping)
+        {
+            fallTime = 0;
+        }
+
+        //if in the air and falling, start timer
+        if(!onGround && playerRB.velocity.y < 0f)
+        {
+            fallTime += Time.deltaTime;
+
+            if(fallTime >= 5f)
+            {
+                GameManager.Instance.GameOver();
+            }
+        }
+
+        //landed
+        if(!wasGrounded && onGround)
+        {
+            fallTime = 0f;
+            Debug.Log($"You fell for  {fallTime:f2} seconds.");
+        }
+
+        wasGrounded = onGround;
+
+
+
+
     }
 }

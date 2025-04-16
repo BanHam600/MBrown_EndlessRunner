@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
 
     public bool canSpawn = true;
 
+    public Transform playerLocation;
+    public Vector2 respawnPoint;
+
     
 
     public string ScoreDisplay()
@@ -49,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //sets score to the time played
         if (isPlaying == true)
         {
             currentScore += Time.deltaTime;
@@ -63,25 +66,40 @@ public class GameManager : MonoBehaviour
             
         }
 
-        
 
-        if (Input.GetKeyDown("j"))
+        // reset game on Key press
+        if (Input.GetKeyDown("r"))
         {
-            ResetGame();
-        }
+            if(isPlaying == true)
+            {
+                ResetGame();
+            }
+            else 
+            {
+
+                ResetGame();
+                UIManager.Instance.GameOverDisplay();
+            }
+
             
+        }
+       
+
     }
 
     public void GameOver()
     {
-        currentScore = 0;
         isPlaying = false;
+        PauseObstacles();
+        Respawn();
+        UIManager.Instance.GameOverDisplay();
     }
 
     public void ResetGame()
     {
         isPlaying = true;
         currentScore = 0;
+        Respawn();
         player.SetActive(true);
         currentCollected = 0;
        
@@ -120,7 +138,10 @@ public class GameManager : MonoBehaviour
         canSpawn = true;
     }
 
-    //public void UpdatePlayerPlatformState(onGround)
+    public void Respawn()
+    {
+        player.transform.position = respawnPoint;
+    }
    
 
 }

@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2546856956028637186}
   - component: {fileID: 3006981150595105450}
-  - component: {fileID: 8134011206844789110}
+  - component: {fileID: 6787982915865133714}
+  - component: {fileID: 745312053498163502}
+  - component: {fileID: 6211063283994617960}
   m_Layer: 0
   m_Name: Debris_Panel
   m_TagString: Obstacle
@@ -61,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!66 &8134011206844789110
-CompositeCollider2D:
+--- !u!60 &6787982915865133714
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,20 +92,54 @@ CompositeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths: []
-  m_CompositePaths:
-    m_Paths: []
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.0198616, y: 2.4766746}
+      - {x: -2.0665302, y: -0.61523265}
+      - {x: -1.0445982, y: -1.6589019}
+      - {x: 0.33281994, y: -0.26721537}
+      - {x: 2.0771534, y: 1.4457381}
   m_UseDelaunayMesh: 0
-  m_CompositeGameObject: {fileID: 3152772292580106398}
+--- !u!114 &745312053498163502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3152772292580106398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a312df78a8c0d694a975a7dc7e24d29d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6211063283994617960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3152772292580106398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d99ee833e23ff04cb1d4075b22eea9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentRotation: 0
+  rotationAmount: 0
+  degreesPerSec: 25
 --- !u!1 &8245566091214617851
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +214,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 68a1e551e051b7b4eb2937511eed6afc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9622642, g: 0.5492168, b: 0.5492168, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

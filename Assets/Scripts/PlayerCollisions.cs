@@ -10,6 +10,7 @@ public class PlayerCollisions : MonoBehaviour
         {
             gameObject.SetActive(false);
             GameManager.Instance.isPlaying = false;
+            GameManager.Instance.GameOver();
         }
 
         if (collision.GetComponent<Collectible>())
