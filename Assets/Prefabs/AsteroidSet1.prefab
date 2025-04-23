@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4773969649819984152}
   m_Layer: 0
   m_Name: AsteroidSet1
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3899939755094018919, guid: feb0dc4974a63164081d0842679f0520, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7730904
+      value: -9.02
       objectReference: {fileID: 0}
     - target: {fileID: 3899939755094018919, guid: feb0dc4974a63164081d0842679f0520, type: 3}
       propertyPath: m_LocalPosition.y
@@ -201,11 +201,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339076436570624799, guid: deffbcd75750a344a9d17f5f636d862b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.7
+      value: -2.37
       objectReference: {fileID: 0}
     - target: {fileID: 1339076436570624799, guid: deffbcd75750a344a9d17f5f636d862b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -0.76
       objectReference: {fileID: 0}
     - target: {fileID: 1339076436570624799, guid: deffbcd75750a344a9d17f5f636d862b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -263,11 +263,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6394434466994435875, guid: 8677c7b7534c53d4187126c4e53053e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.7
+      value: 7.13
       objectReference: {fileID: 0}
     - target: {fileID: 6394434466994435875, guid: 8677c7b7534c53d4187126c4e53053e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.2
+      value: -6.95
       objectReference: {fileID: 0}
     - target: {fileID: 6394434466994435875, guid: 8677c7b7534c53d4187126c4e53053e8, type: 3}
       propertyPath: m_LocalPosition.z

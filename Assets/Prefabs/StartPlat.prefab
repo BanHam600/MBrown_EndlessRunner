@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5255970072005931835}
   - component: {fileID: 4469771624624677199}
   - component: {fileID: 4117614666110007424}
+  - component: {fileID: 239426544828553662}
   m_Layer: 6
   m_Name: StartPlat
   m_TagString: Untagged
@@ -160,8 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPlatRB: {fileID: 5255970072005931835}
   platformForce: 5
-  playerOnStartingPlat: 1
-  platformTimerRemaining: 0
 --- !u!60 &4117614666110007424
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -226,3 +225,18 @@ PolygonCollider2D:
       - {x: 0.15167423, y: 2.0895405}
       - {x: 0.0011193603, y: 2.927895}
   m_UseDelaunayMesh: 0
+--- !u!114 &239426544828553662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6665231114743071017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d99ee833e23ff04cb1d4075b22eea9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentRotation: 0
+  rotationAmount: 0
+  degreesPerSec: 15

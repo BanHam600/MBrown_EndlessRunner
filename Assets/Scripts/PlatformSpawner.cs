@@ -62,6 +62,7 @@ public class PlatformSpawner : MonoBehaviour
         Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
 
         obstacleRB.velocity = Vector2.left * obstacleSpeed;
+        
         GameManager.Instance.currentObstacleSpeed = obstacleSpeed;
 
         GameManager.Instance.activeObstacles.Add(spawnedObstacle);

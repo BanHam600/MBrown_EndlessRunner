@@ -19,14 +19,15 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public GameObject player;
-    
+
     public bool isPlaying;
-    
+
     public float currentScore;
 
     public int currentCollected;
 
     public List<GameObject> activeObstacles;
+    public List<GameObject> activePlatforms;
 
     public float currentObstacleSpeed;
     public float maxObstacleSpeed;
@@ -37,7 +38,14 @@ public class GameManager : MonoBehaviour
     public Transform playerLocation;
     public Vector2 respawnPoint;
 
+    public GameObject startingPlat;
+    public Transform platLocation;
+    public Vector2 platSpawnPoint;
+    public Rigidbody2D startingPlatRB;
     
+
+
+
 
     public string ScoreDisplay()
     {
@@ -46,7 +54,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (player != null)
+        {
+            player.SetActive(false);
+            PauseObstacles();
+        }
+
         
+
     }
 
     // Update is called once per frame
@@ -57,33 +72,33 @@ public class GameManager : MonoBehaviour
         {
             currentScore += Time.deltaTime;
 
-            if(currentObstacleSpeed < maxObstacleSpeed)
+            if (currentObstacleSpeed < maxObstacleSpeed)
             {
                 currentObstacleSpeed += acceleration * Time.deltaTime;
                 ResumeObstacles();
             }
 
-            
+
         }
 
 
         // reset game on Key press
         if (Input.GetKeyDown("r"))
         {
-            if(isPlaying == true)
+            if (isPlaying == true)
             {
                 ResetGame();
             }
-            else 
+            else
             {
 
                 ResetGame();
                 UIManager.Instance.GameOverDisplay();
             }
 
-            
+
         }
-       
+
 
     }
 
@@ -102,7 +117,7 @@ public class GameManager : MonoBehaviour
         Respawn();
         player.SetActive(true);
         currentCollected = 0;
-       
+
         foreach (GameObject go in activeObstacles)
         {
             Destroy(go);
@@ -123,9 +138,9 @@ public class GameManager : MonoBehaviour
 
         canSpawn = false;
 
-    }   
+    }
 
-   
+
 
 
     public void ResumeObstacles()
@@ -140,8 +155,25 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
-        player.transform.position = respawnPoint;
-    }
-   
+        startingPlatRB.velocity = Vector2.zero;
+        player.transform.position = respawnPoint; 
+        startingPlat.transform.position = platSpawnPoint;
+        
 
+
+
+
+    }
+
+    public void GameStart()
+    {
+
+        if (player != null)
+        {
+            isPlaying = true;
+            player.SetActive(true);
+            UIManager.Instance.startMenuPanel.SetActive(false);
+            ResumeObstacles();
+        }
+    }
 }
