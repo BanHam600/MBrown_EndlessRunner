@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
             playerRB.velocity = Vector2.up * jumpForce;
             
             isJumping = true;
-            animator.SetBool("isJumping", true);
+            //animator.SetBool("isJumping", true);
         }
 
         if (isJumping == true && Input.GetButton("Jump"))
