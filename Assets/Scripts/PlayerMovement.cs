@@ -24,10 +24,19 @@ public class PlayerMovement : MonoBehaviour
     private bool wasGrounded;
 
 
+    void OnDrawGizmosSelected()
+    {
+        if (feetPos != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(feetPos.position, 0.25f);
+        }
+    }
 
 
 
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,27 +46,27 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("vSpeed", playerRB.velocity.y);
 
-        
+        onGround = Physics2D.OverlapCircle(feetPos.position, 0.25f, groundLayer);
 
-        if (Physics2D.OverlapCircle(feetPos.position, 0.25f, groundLayer) == true) // creates a overlap circle at (variable.position, radius, layer)
-        {
-            onGround = true;
-            //GameManager.Instance.UpdatePlayerPlatformState(bool, onGround);
-        }
+        animator.SetBool("isGrounded", onGround);
 
-        else
-        {
-            onGround = false;
-        }
+        Debug.Log("[GroundCheck] onGround ={onGround}");
+       
 
 
-        if (Input.GetButton("Jump") && onGround == true)
+        if (onGround && Input.GetButtonDown("Jump"))
         {
             playerRB.velocity = Vector2.up * jumpForce;
             
             isJumping = true;
-            //animator.SetBool("isJumping", true);
+
+            jumpTimer = 0;
+
+            Debug.Log(" Jump button DOWN");
+
+
         }
 
         if (isJumping == true && Input.GetButton("Jump"))
@@ -67,6 +76,8 @@ public class PlayerMovement : MonoBehaviour
                 playerRB.velocity = Vector2.up * jumpForce;
                 
                 jumpTimer += Time.deltaTime;
+
+                Debug.Log(" Applying jump impulse");
             }
 
             else
@@ -78,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
             isJumping = false;  
-            jumpTimer = 0;
         }
 
         if (Input.GetKeyDown("s"))
@@ -116,9 +126,5 @@ public class PlayerMovement : MonoBehaviour
         }
 
         wasGrounded = onGround;
-
-
-
-
     }
 }
