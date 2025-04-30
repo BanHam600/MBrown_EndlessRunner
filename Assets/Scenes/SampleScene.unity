@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRB: {fileID: 1009272314}
-  jumpForce: 6.5
+  jumpForce: 7
   jumpTime: 0.7
   animator: {fileID: 1009272313}
   feetPos: {fileID: 55500639}
